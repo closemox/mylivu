@@ -175,7 +175,8 @@ main {
   top: 132px;
 }
 
-.hero-image {
+/* ── Hero track (swipeable on mobile, static on desktop) ── */
+.hero-track-wrap {
   aspect-ratio: 1 / 1;
   border-radius: 12px;
   overflow: hidden;
@@ -184,15 +185,49 @@ main {
   box-shadow: inset 0 0 0 1px #eeeeea;
 }
 
-.hero-image img {
+.hero-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  /* desktop: only first slide visible, JS controls via opacity on img */
+}
+
+.hero-slide {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.hero-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
+}
+
+/* video play overlay inside a slide */
+.video-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.38);
+}
+
+.video-play {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 32px;
+  pointer-events: none;
 }
 
 .badge {
   position: absolute;
-  z-index: 2;
+  z-index: 4;
   top: 28px;
   left: 24px;
   display: inline-flex;
@@ -215,6 +250,7 @@ main {
   background: #ffc12e;
 }
 
+/* ── Desktop thumbnail row ── */
 .thumb-row {
   margin: -88px 14px 0;
   position: relative;
@@ -251,6 +287,9 @@ main {
 .thumb.video::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,.45); }
 .thumb.video span { position: absolute; inset: 0; z-index: 1; display: grid; place-items: center; color: white; font-size: 21px; }
 .arrow { font-size: 38px; color: #2e3a2d; line-height: 1; }
+
+/* ── Mobile thumbnail strip (hidden on desktop) ── */
+.mobile-thumb-strip { display: none; }
 .mobile-dots { display: none; }
 
 .purchase {
@@ -759,8 +798,26 @@ h1 {
     top: auto;
   }
 
-  .hero-image {
-    border-radius: 8px;
+  /* ── Mobile hero: snap-scrollable ── */
+  .hero-track-wrap {
+    border-radius: 0;
+    aspect-ratio: 4 / 4.2;
+    margin: 0 -15px;
+    width: calc(100% + 30px);
+    box-shadow: none;
+  }
+
+  .hero-track {
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .hero-track::-webkit-scrollbar { display: none; }
+
+  .hero-slide {
+    scroll-snap-align: start;
   }
 
   .badge {
@@ -768,36 +825,73 @@ h1 {
     left: 17px;
     padding: 7px 13px;
     font-size: 12px;
+    border-radius: 999px;
   }
 
+  /* hide desktop row on mobile */
   .thumb-row { display: none; }
 
-  .mobile-dots {
-    width: 136px;
-    height: 36px;
-    margin: -18px auto 24px;
-    position: relative;
-    z-index: 4;
+  /* ── Mobile thumbnail strip ── */
+  .mobile-thumb-strip {
     display: flex;
-    align-items: center;
-    justify-content: center;
     gap: 10px;
-    background: rgba(255,255,255,.95);
-    border-radius: 999px;
-    box-shadow: 0 3px 16px rgba(29, 39, 29, .13);
+    overflow-x: auto;
+    scrollbar-width: none;
+    scroll-snap-type: x proximity;
+    padding: 14px 15px 0;
+    /* negative margin to keep parent padding intact */
+    margin: 0 -15px;
+    width: calc(100% + 30px);
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
-  .mobile-dots span {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #d6d8d0;
+  .mobile-thumb-strip::-webkit-scrollbar { display: none; }
+
+  .mthumb {
+    flex: 0 0 72px;
+    height: 72px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2.5px solid transparent;
+    background: #f2f3ed;
+    padding: 0;
+    position: relative;
+    scroll-snap-align: start;
+    transition: border-color .18s ease, transform .18s ease, box-shadow .18s ease;
+    box-shadow: 0 2px 8px rgba(28,42,26,.07);
   }
 
-  .mobile-dots .active {
-    width: 12px;
-    height: 12px;
-    background: var(--green);
+  .mthumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 7px;
+  }
+
+  .mthumb.active {
+    border-color: var(--green);
+    box-shadow: 0 4px 14px rgba(63, 125, 51, .22);
+    transform: scale(1.04);
+  }
+
+  .mthumb.video::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.38);
+    border-radius: 7px;
+  }
+
+  .mthumb.video > span {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    color: white;
+    font-size: 16px;
   }
 
   .purchase { padding: 0 5px; }
@@ -949,10 +1043,10 @@ h1 {
   }
 
   .detail-grid {
-    grid-template-columns: minmax(0, .96fr) minmax(0, 1.04fr);
-    gap: 10px;
-    align-items: stretch;
-    margin-bottom: 22px;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    align-items: start;
+    margin-bottom: 28px;
   }
 
   .video-block {
@@ -962,38 +1056,42 @@ h1 {
   }
   .video-block button { width: 62px; height: 62px; font-size: 23px; }
 
+  .freshness {
+    padding: 0 4px;
+  }
+
   .freshness h2 {
-    font-size: 16px;
-    line-height: 1.1;
-    margin-bottom: 8px;
-    overflow-wrap: anywhere;
+    font-size: 22px;
+    line-height: 1.12;
+    margin-bottom: 14px;
+    overflow-wrap: normal;
   }
 
   .freshness ul {
-    gap: 7px;
-    margin-bottom: 10px;
+    gap: 11px;
+    margin-bottom: 16px;
   }
 
   .freshness li {
-    padding-left: 18px;
-    font-size: 9px;
-    line-height: 1.18;
+    padding-left: 25px;
+    font-size: 13px;
+    line-height: 1.28;
   }
 
   .freshness li::before {
-    width: 12px;
-    height: 12px;
-    font-size: 8px;
+    width: 17px;
+    height: 17px;
+    font-size: 11px;
   }
 
   .did-you-know {
-    grid-template-columns: 24px 1fr;
-    gap: 6px;
-    padding: 10px;
+    grid-template-columns: 34px 1fr;
+    gap: 10px;
+    padding: 15px;
   }
 
-  .did-you-know svg { width: 22px; height: 22px; }
-  .did-you-know p { font-size: 9px; line-height: 1.15; }
+  .did-you-know svg { width: 30px; height: 30px; }
+  .did-you-know p { font-size: 12px; line-height: 1.25; }
 
   .press, .bottom-values { display: none; }
 
