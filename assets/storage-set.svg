@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Mylivu airtight container set</title>
+  <desc id="desc">A square product image of clear food storage containers with green lids and fresh produce.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8f8f3"/>
+      <stop offset=".7" stop-color="#efeee6"/>
+      <stop offset="1" stop-color="#faf9f5"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".88"/>
+      <stop offset=".52" stop-color="#dfe6dd" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity=".78"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="22" stdDeviation="22" flood-color="#24331f" flood-opacity=".16"/>
+    </filter>
+    <clipPath id="boxA"><rect x="251" y="226" width="525" height="245" rx="42"/></clipPath>
+    <clipPath id="boxB"><rect x="187" y="461" width="610" height="270" rx="44"/></clipPath>
+    <clipPath id="boxC"><rect x="202" y="714" width="610" height="276" rx="44"/></clipPath>
+    <clipPath id="boxD"><rect x="726" y="621" width="306" height="311" rx="42"/></clipPath>
+  </defs>
+  <rect width="1200" height="1200" fill="url(#bg)"/>
+  <ellipse cx="585" cy="1018" rx="470" ry="72" fill="#d8d6ca" opacity=".42"/>
+  <g filter="url(#shadow)" stroke-linejoin="round">
+    <g>
+      <rect x="251" y="226" width="525" height="245" rx="42" fill="url(#glass)" stroke="#bcc6b7" stroke-width="9"/>
+      <g clip-path="url(#boxA)">
+        <rect x="251" y="226" width="525" height="245" fill="#eef5ea" opacity=".35"/>
+        <g fill="#396c35">
+          <circle cx="327" cy="411" r="34"/><circle cx="390" cy="378" r="40"/><circle cx="463" cy="406" r="37"/>
+          <circle cx="544" cy="374" r="44"/><circle cx="636" cy="409" r="37"/><circle cx="704" cy="377" r="35"/>
+          <circle cx="350" cy="334" r="36"/><circle cx="454" cy="319" r="34"/><circle cx="572" cy="317" r="36"/><circle cx="671" cy="327" r="33"/>
+        </g>
+        <g fill="#6e9a4e" opacity=".68">
+          <circle cx="415" cy="430" r="24"/><circle cx="603" cy="431" r="23"/><circle cx="506" cy="359" r="21"/><circle cx="710" cy="433" r="22"/>
+        </g>
+      </g>
+      <path d="M223 238c21-50 82-72 144-63h285c90-4 157 17 171 65l-29 53H251z" fill="#d8dfcf" stroke="#8d9c7f" stroke-width="8"/>
+      <rect x="411" y="240" width="191" height="65" rx="18" fill="#526b2f"/>
+      <rect x="232" y="307" width="64" height="85" rx="18" fill="#506b2e"/>
+      <rect x="738" y="303" width="63" height="86" rx="18" fill="#506b2e"/>
+    </g>
+    <g>
+      <rect x="187" y="461" width="610" height="270" rx="44" fill="url(#glass)" stroke="#bcc6b7" stroke-width="9"/>
+      <g clip-path="url(#boxB)" fill="#e9b33d">
+        <rect x="187" y="461" width="610" height="270" fill="#fff9e9"/>
+        <g opacity=".96">
+          <circle cx="257" cy="655" r="31"/><circle cx="320" cy="641" r="34"/><circle cx="383" cy="663" r="31"/><circle cx="452" cy="633" r="34"/>
+          <circle cx="524" cy="661" r="32"/><circle cx="601" cy="631" r="36"/><circle cx="684" cy="657" r="33"/><circle cx="744" cy="619" r="30"/>
+          <circle cx="286" cy="569" r="35"/><circle cx="361" cy="547" r="31"/><circle cx="439" cy="569" r="34"/><circle cx="516" cy="544" r="31"/>
+          <circle cx="588" cy="575" r="36"/><circle cx="671" cy="548" r="32"/><circle cx="743" cy="572" r="34"/>
+        </g>
+      </g>
+      <path d="M158 471c19-49 91-69 160-60h344c85 0 149 22 163 64l-30 53H190z" fill="#d8dfcf" stroke="#8d9c7f" stroke-width="8"/>
+      <rect x="426" y="476" width="195" height="68" rx="18" fill="#526b2f"/>
+      <rect x="167" y="542" width="66" height="88" rx="18" fill="#506b2e"/>
+      <rect x="746" y="538" width="64" height="89" rx="18" fill="#506b2e"/>
+    </g>
+    <g>
+      <rect x="202" y="714" width="610" height="276" rx="44" fill="url(#glass)" stroke="#bcc6b7" stroke-width="9"/>
+      <g clip-path="url(#boxC)" fill="#bb2e25">
+        <rect x="202" y="714" width="610" height="276" fill="#fff4ef"/>
+        <circle cx="282" cy="908" r="38"/><circle cx="362" cy="872" r="41"/><circle cx="447" cy="914" r="42"/><circle cx="539" cy="874" r="43"/>
+        <circle cx="632" cy="917" r="40"/><circle cx="724" cy="876" r="41"/><circle cx="324" cy="793" r="41"/><circle cx="427" cy="797" r="38"/>
+        <circle cx="535" cy="792" r="40"/><circle cx="645" cy="800" r="37"/><circle cx="742" cy="789" r="39"/>
+      </g>
+      <path d="M172 724c22-55 96-76 166-66h348c90 0 155 23 169 69l-33 56H205z" fill="#d8dfcf" stroke="#8d9c7f" stroke-width="8"/>
+      <rect x="426" y="729" width="202" height="73" rx="19" fill="#526b2f"/>
+      <rect x="180" y="798" width="67" height="92" rx="18" fill="#506b2e"/>
+      <rect x="765" y="793" width="65" height="93" rx="18" fill="#506b2e"/>
+    </g>
+    <g>
+      <rect x="726" y="621" width="306" height="311" rx="42" fill="url(#glass)" stroke="#bcc6b7" stroke-width="8"/>
+      <g clip-path="url(#boxD)" fill="#f19c2f">
+        <rect x="726" y="621" width="306" height="311" fill="#fff3e6"/>
+        <circle cx="785" cy="858" r="25"/><circle cx="839" cy="832" r="27"/><circle cx="890" cy="866" r="25"/><circle cx="942" cy="829" r="27"/>
+        <circle cx="995" cy="866" r="24"/><circle cx="805" cy="773" r="26"/><circle cx="865" cy="741" r="25"/><circle cx="929" cy="773" r="27"/><circle cx="988" cy="741" r="25"/>
+      </g>
+      <path d="M706 628c16-38 54-55 103-49h129c61-2 104 15 113 50l-17 40H727z" fill="#d8dfcf" stroke="#8d9c7f" stroke-width="7"/>
+      <rect x="802" y="634" width="152" height="57" rx="16" fill="#526b2f"/>
+      <rect x="707" y="695" width="49" height="72" rx="15" fill="#506b2e"/>
+      <rect x="1008" y="693" width="47" height="72" rx="15" fill="#506b2e"/>
+    </g>
+  </g>
+  <g transform="translate(918 154)">
+    <circle cx="82" cy="82" r="78" fill="none" stroke="#3f7835" stroke-width="9"/>
+    <text x="82" y="73" fill="#3f7835" font-family="Arial, sans-serif" font-size="38" font-weight="800" text-anchor="middle">BPA</text>
+    <text x="82" y="114" fill="#3f7835" font-family="Arial, sans-serif" font-size="38" font-weight="800" text-anchor="middle">FREE</text>
+    <path d="M130 137c33-3 58-20 74-51-34-4-64 9-80 40-13-26-34-43-63-51 3 41 24 65 63 73z" fill="#4b873c"/>
+  </g>
+</svg>
