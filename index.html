@@ -39,11 +39,28 @@
     <main>
       <section class="product-shell" aria-label="Product purchase area">
         <div class="gallery">
-          <div class="hero-image">
+          <!-- Swipeable hero wrapper -->
+          <div class="hero-track-wrap">
+            <div class="hero-track" id="heroTrack" aria-label="Product images">
+              <div class="hero-slide"><img src="./assets/product-1.jpeg" alt="Airtight food storage container set with fresh produce" /></div>
+              <div class="hero-slide"><img src="./assets/product-2.jpeg" alt="Container set showing multiple sizes" /></div>
+              <div class="hero-slide"><img src="./assets/product-3.jpeg" alt="BPA-free lids and leak-proof seal detail" /></div>
+              <div class="hero-slide"><img src="./assets/product-4.jpeg" alt="Stackable containers in refrigerator" /></div>
+              <div class="hero-slide video-slide"><img src="./assets/product-6.jpeg" alt="Video thumbnail" /><span class="video-play">▶</span></div>
+            </div>
             <span class="badge">Best Seller</span>
-            <img src="./assets/product-1.jpeg" alt="Airtight food storage container set with fresh produce" />
           </div>
-          <div class="mobile-dots" aria-hidden="true"><span class="active"></span><span></span><span></span><span></span><span></span></div>
+
+          <!-- Mobile thumbnail strip -->
+          <div class="mobile-thumb-strip" id="mobileThumbStrip" aria-label="Product image thumbnails">
+            <button class="mthumb active" data-index="0"><img src="./assets/product-1.jpeg" alt="" /></button>
+            <button class="mthumb" data-index="1"><img src="./assets/product-2.jpeg" alt="" /></button>
+            <button class="mthumb" data-index="2"><img src="./assets/product-3.jpeg" alt="" /></button>
+            <button class="mthumb" data-index="3"><img src="./assets/product-4.jpeg" alt="" /></button>
+            <button class="mthumb video" data-index="4"><img src="./assets/product-6.jpeg" alt="" /><span>▶</span></button>
+          </div>
+
+          <!-- Desktop thumb-row (hidden on mobile) -->
           <div class="thumb-row" aria-label="Product media thumbnails">
             <button class="arrow" aria-label="Previous media">‹</button>
             <button class="thumb selected"><img src="./assets/product-1.jpeg" alt="" /></button>
